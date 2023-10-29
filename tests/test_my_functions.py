@@ -21,5 +21,13 @@ def test_subtract()-> None:
     result = my_functions.subtract(4, 2)
     
     assert result == 2
+
+def test_divide_by_zero()-> None:
+    with pytest.raises(ZeroDivisionError):
+        my_functions.divide(4, 0)
+        
+def test_add_strings()-> None:
+    result = my_functions.add('Hello ', 'World ')
     
+    assert result == 'Hello World'
 # Run the tests
