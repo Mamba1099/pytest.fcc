@@ -1,4 +1,5 @@
 import pytest
+import time
 
 from source import my_functions
 
@@ -39,3 +40,17 @@ def test_add_strings() -> None:
 
 
 # Run the tests
+
+# mark and parametrize
+#this is giving functions a name or label
+# to apply marker to  a function you the '@pytest.mark' decorator
+# you can run test with a marker by using the '-m' option together with pytest
+# pytest -m <marker_name>
+#inorder to see markers and their available descriptions you usen the '--markers' option    
+
+
+@pytest.mark.slow # this is a marker
+def test_very_slow():
+    time.sleep(5)
+    result = my_functions.divide(4, 2)
+    assert result == 2
