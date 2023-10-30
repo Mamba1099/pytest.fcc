@@ -54,3 +54,30 @@ def test_very_slow():
     time.sleep(5)
     result = my_functions.divide(4, 2)
     assert result == 2
+    
+
+#apart from .slow there is also .skip and .xfail
+#skip is used to skip a test
+# with skip you skip a test that is already broken
+# marker is '@pytest.mark.skip
+
+
+#lets assume that the add function is broken
+@pytest.mark.skip(reason='This feature is currently broken')
+def test_add():
+    result = my_functions.add(1, 3)
+    assert result == 4
+    
+#x fail used to used to mark a test as an expected failure
+# this means that you are acknowledging that the test will fail
+# it wont be treated as a test failure in the test results
+# marker is '@pytest.mark.xfail'
+
+@pytest.mark.xfail(reason='we know we cannot divide by zero')
+def test_divide_zero_broken():
+    my_functions.divide(4, 0)
+    
+# when you have tests and you know they are gonna fail you use xfail to mark them
+
+
+#parametrize
