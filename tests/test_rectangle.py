@@ -1,19 +1,6 @@
 import pytest
 
 
-from source.shapes import Rectangle
-
-
-# using fixtures
-@pytest.fixture
-def my_rectangle():
-    return Rectangle(10, 20)
-
-
-
-@pytest.fixture
-def  wierd_rectangle():
-    return Rectangle(5, 6)
 
 
 def test_area(my_rectangle):
