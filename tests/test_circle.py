@@ -1,6 +1,6 @@
 import pytest
 
-from my_package.source import shapes
+from source.shapes import Circle
 
 
 class TestCircle:
@@ -13,11 +13,11 @@ class TestCircle:
         print(f"tearing down {method}")
 
     def test_area(self):
-        self.circle = shapes.Circle(2)
+        self.circle = Circle(2)
         result = self.circle.area()
         assert result == 12.566370614359172
 
     def test_perimeter(self):
-        self.circle = shapes.Circle(5)
+        self.circle = Circle(5)
         result = self.circle.perimeter()
         assert result == 31.41592653589793

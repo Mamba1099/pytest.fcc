@@ -1,6 +1,6 @@
 import pytest
 
-from my_package.source import shapes
+from source.shapes import Square
 
 
 class TestSquare:
@@ -11,11 +11,11 @@ class TestSquare:
         print(f"tearing down {method}")
 
     def test_area(self):
-        self.square = shapes.Square(2)
-        result = self.square.area()
+        square = Square(2)
+        result = square.area()
         assert result == 4
 
     def test_perimeter(self):
-        self.square = shapes.Square(5)
-        result = self.square.perimeter()
+        square = Square(5)
+        result = square.perimeter()
         assert result == 20

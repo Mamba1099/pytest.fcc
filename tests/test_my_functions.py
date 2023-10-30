@@ -1,6 +1,6 @@
 import pytest
 
-from my_package.source import my_functions
+from source import my_functions
 
 
 def test_add():
@@ -33,7 +33,7 @@ def test_divide_by_zero() -> None:
 
 
 def test_add_strings() -> None:
-    result = my_functions.add("Hello ", "World ")
+    result = my_functions.add("Hello ", "World")
 
     assert result == "Hello World"
 
